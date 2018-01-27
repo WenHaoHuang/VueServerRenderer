@@ -1,0 +1,59 @@
+/**
+ * @author: wenhao.huang
+ * @date:   2017/12/24
+ * @module: style.css
+ */
+@import 'normalize';
+@import 'mixin';
+@import "basic";
+@import "layout";
+@import "transition";
+@import "color";
+@import "text";
+@import "button";
+// notice
+@import "notify";
+@import "loading";
+
+
+.page-article {
+    h2, h3 {
+        margin: 0.5rem 0 0.2rem;
+    }
+    .section-content {
+        color: $info;.flex{
+        color:$white;
+        .flex-hd,.flex-bd,.flex-ft{
+            padding:0.1rem;
+        }
+        .flex-hd{
+            background-color:$info;
+        }
+        .flex-bd{
+            background-color:$purple;
+            min-height:0.8rem;
+        }
+        .flex-ft{
+            background-color:$light;
+        }
+    }
+
+        .ibox-color {
+            border-radius: 0.08rem;
+            padding: 0.1rem 0.2rem;
+            height: 1rem;
+            width: 1.6rem;
+            color: $white;
+        }
+    }
+}
+.cells-button{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    .btn{
+        margin-bottom:0.3rem;
+    }
+}

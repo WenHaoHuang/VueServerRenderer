@@ -1,0 +1,57 @@
+/**
+ * @author: wenhao.huang
+ * @date:   2017/12/24
+ * @module:
+ */
+
+// transition
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s ease;
+}
+
+.fade-enter, .fade-leave-to
+{
+    opacity: 0;
+}
+
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.slide-right-enter-active {
+    transition: all .5s ease;
+}
+
+.slide-right-leave-active {
+    transition: all .5s ease;
+}
+
+.slide-right-enter
+{
+    transform: translateX(100%);
+}
+
+.slide-right-leave-to {
+    transform: translateX(0);
+    opacity:0;
+}
+
+.slide-left-enter-active {
+    transition: all .5s ease;
+}
+
+.slide-left-leave-active {
+    transition: all .5s ease;
+}
+
+.slide-left-enter,.slide-left-leave-to
+{
+    transform: translateX(-100%);
+}
+
+@keyframes slideLeftIn{
+    0%{
+        transform:translateX(-100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}

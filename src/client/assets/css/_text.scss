@@ -1,0 +1,38 @@
+/**
+ * @author: wenhao.huang
+ * @date:   2017/12/24
+ * @module:
+ */
+@import 'mixin';
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xs {
+    font-size: 0.24rem;
+}
+
+.text-sm {
+    font-size: 0.28rem;
+}
+
+.text-md {
+    font-size: 0.32rem;
+}
+
+.text-lg {
+    font-size: 0.4rem;
+}
+
+.text-xl {
+    font-size: 0.48rem;
+}

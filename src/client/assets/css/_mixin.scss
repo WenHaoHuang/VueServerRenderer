@@ -1,0 +1,100 @@
+/**
+ * @author: wenhao.huang
+ * @date:   2017/12/23
+ */
+
+// 字体
+$fontFamily: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+// $fontFamily:"Alright Sans LP", "Avenir Next", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi MicroHei", sans-serif
+// $fontFamily: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+// 颜色名称
+$primary: #409EFF;
+$info:    #909399;
+$danger:  #F56C6C;
+$warning: #E6A23C;
+$success: #67C23A;
+$default: #333333;
+$white:   #FFFFFF;
+$light:   #E0E0E0;
+$purple:  #D0D0D0;
+
+// flex
+@mixin flex($direction:row,$justify:space-between,$align:center){
+  display:flex;
+  flex-direction:#{$direction};
+  justify-content:#{$justify};
+  align-items:#{$align};
+}
+// gutter 间隔
+@mixin gutter($type:margin,$direction:top,$multiple:0){
+    #{$type}-#{$direction}:0.1rem * $multiple;
+}
+// button
+@function get_Color($str){
+    $return: #333 !default;
+    @if($str == primary){
+        $return:$primary;
+    }
+    @else if($str == info){
+        $return:$info;
+    }
+    @else if($str == danger){
+        $return:$danger;
+    }
+    @else if($str == warning){
+        $return:$warning;
+    }
+    @else if($str == success){
+        $return:$success;
+    }
+    @return $return;
+}
+@mixin button($ype:default,$plain:false,$round:false){
+    line-height:1;
+    cursor: pointer;
+    background-color: $white;
+    display: inline-block;
+    padding: 0.24rem 0.4rem;
+    border: 0.02rem solid #D0D0D0;
+    text-align: center;
+    margin: 0;
+    outline: none;
+    transition: 0.1s;
+    user-select: none;
+    border-radius: 0.08rem;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 0.28rem;
+    -webkit-appearance: none;
+    &:focus,&:hover{
+        color:$primary;
+        background-color:rgba($primary,0.1);
+        border-color:rgba($primary,0.3);
+    }
+    &.is-round{
+        border-radius:0.8rem;
+    }
+    &.disabled{
+        opacity:0.6;
+    }
+    @if($ype != default){
+        color:$white;
+        border-color:get_Color($ype);
+        background-color:get_Color($ype);
+        &:focus,&:hover{
+            color:$white;
+            background-color:rgba(get_Color($ype),0.75);
+            border-color:rgba(get_Color($ype),0.75);
+        }
+        &.is-plain{
+            color:get_Color($ype);
+            background-color:rgba(get_Color($ype),0.1);
+            border-color:rgba(get_Color($ype),0.3);
+            &:focus,&:hover{
+                color:$white;
+                background-color:get_Color($ype);
+                border-color:get_Color($ype);
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+/**
+ * @author: wenhao.huang
+ * @date:   2017/12/24
+ * @module: sideMenu
+ */
+
+@import "~assets/css/mixin";
+
+#menu {
+    .cover {
+        position: fixed;
+        z-index: 500;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .menu_body {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 501;
+        width: 5rem;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        background-color: #E0E0E0;
+    }
+    .menu-list {
+        .item_hd {
+            padding: 0.1rem 0.3rem;
+            font-size: 0.4rem;
+            background-color: $white;
+            text-transform: capitalize;
+        }
+        .item_bd {
+            background-color: $white;
+            padding-left: 0.3rem;
+            .item {
+                display: block;
+                padding: 0.16rem 0.3rem;
+                text-transform: capitalize;
+                & + .item {
+                    border-top: 0.02rem solid #E0E0E0;
+                }
+                &.current {
+                    color: $white;
+                    background-color: $primary;
+                    position: relative;
+                    overflow: hidden;
+                }
+            }
+        }
+        & + .menu-list {
+            padding-top: 0.2rem;
+        }
+    }
+}
