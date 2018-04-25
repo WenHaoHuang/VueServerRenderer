@@ -1,0 +1,23 @@
+{
+  "name"        : "web",
+  "script"      : "./app.js",
+  "cwd"         : "./",
+  "watch": [ "server" ],
+  "ignore_watch" : [
+    "node_modules",
+    "logs",
+    "public",
+    "pm2-logs",
+    "mnt",
+    "client"
+  ],
+  "watch_options": {
+    "followSymlinks": false
+  },
+  "log_type": "json",
+  "merge_logs"      : true,
+  "log_date_format" : "YYYY-MM-DD HH:mm:ss",
+  "instances": 3,
+  "error_file" : "./mnt/log/app-err.log",
+  "out_file"   : "./mnt/log/app-out.log"
+}

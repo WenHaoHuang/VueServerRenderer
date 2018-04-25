@@ -1,0 +1,38 @@
+/**
+ * @author: wenhao.huang
+ * @date:   2017/12/24
+ * @module:
+ */
+@import 'mixins';
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-xs {
+    font-size: 0.24*$unit;
+}
+
+.text-sm {
+    font-size: 0.28*$unit;
+}
+
+.text-md {
+    font-size: 0.32*$unit;
+}
+
+.text-lg {
+    font-size: 0.4*$unit;
+}
+
+.text-xl {
+    font-size: 0.48*$unit;
+}

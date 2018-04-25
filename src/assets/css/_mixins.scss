@@ -1,0 +1,88 @@
+/**
+ * @author: wenhao.huang
+ * @date:   2017/12/23
+ */
+
+// flex
+@mixin flex($direction:row,$justify:space-between,$align:center){
+  display:flex;
+  flex-direction:#{$direction};
+  justify-content:#{$justify};
+  align-items:#{$align};
+}
+// gutter 间隔
+@mixin gutter($type:margin,$direction:top,$multiple:0){
+    #{$type}-#{$direction}:0.1*$unit * $multiple;
+}
+// button
+@function get_Color($str){
+    $return: #333 !default;
+    @if($str == primary){
+        $return:$primary;
+    }
+    @else if($str == info){
+        $return:$info;
+    }
+    @else if($str == danger){
+        $return:$danger;
+    }
+    @else if($str == warning){
+        $return:$warning;
+    }
+    @else if($str == success){
+        $return:$success;
+    }
+    @return $return;
+}
+@mixin button($ype:default,$plain:false,$round:false){
+    line-height:1;
+    cursor: pointer;
+    background-color: $white;
+    display: inline-block;
+    padding: 0.24*$unit 0.4*$unit;
+    border: 0.02*$unit solid #D0D0D0;
+    text-align: center;
+    margin: 0;
+    outline: none;
+    transition: 0.1s;
+    user-select: none;
+    border-radius: 0.08*$unit;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 0.28*$unit;
+    -webkit-appearance: none;
+    &:focus,&:hover{
+        color:$primary;
+        background-color:rgba($primary,0.1);
+        border-color:rgba($primary,0.3);
+    }
+    &.is-square{
+        border-radius:0;
+    }
+    &.is-round{
+        border-radius:0.8*$unit;
+    }
+    &.disabled{
+        opacity:0.6;
+    }
+    @if($ype != default){
+        color:$white;
+        border-color:get_Color($ype);
+        background-color:get_Color($ype);
+        &:focus,&:hover{
+            color:$white;
+            background-color:rgba(get_Color($ype),0.75);
+            border-color:rgba(get_Color($ype),0.75);
+        }
+        &.is-plain{
+            color:get_Color($ype);
+            background-color:rgba(get_Color($ype),0.1);
+            border-color:rgba(get_Color($ype),0.3);
+            &:focus,&:hover{
+                color:$white;
+                background-color:get_Color($ype);
+                border-color:get_Color($ype);
+            }
+        }
+    }
+}
